@@ -23,7 +23,7 @@
             .attr("width", width)
             .attr("height", height);
 
-            d3.json("D:\\OTHER\\PROGRAMMING\\8. semestar\\Vizualizacija podataka\\LV\\LV_5\\Topoloski podaci za RH i SAD-20240422\\us.json", function(error, us)
+            d3.json("Topoloski podaci za RH i SAD-20240422\\us.json", function(error, us)
             {
                 svg.append("svg")
                 .datum(topojson.feature(us, us.objects.land))
