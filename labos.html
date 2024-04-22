@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://d3js.org/topojson.v1.min.js"></script>
+        <title>Labos - predlozak</title>
+    </head>
+    
+    <body>
+        <script>
+
+            var width = 960;
+            var height = 500;
+
+            var projection = d3.geo.albers()
+
+            var path = d3.geo.path()
+            .projection(projection);
+
+            var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+            d3.json("D:\\OTHER\\PROGRAMMING\\8. semestar\\Vizualizacija podataka\\LV\\LV_5\\Topoloski podaci za RH i SAD-20240422\\us.json", function(error, us)
+            {
+                svg.append("svg")
+                .datum(topojson.feature(us, us.objects.land))
+                .attr("class", "land")
+                .attr("d", path);
+            });
+
+
+
+        </script>
+    </body>
+</html>
